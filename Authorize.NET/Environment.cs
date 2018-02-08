@@ -128,10 +128,12 @@ namespace AuthorizeNet
 		    String stringValue = null;
 
 	        String propValue = null;
+#if  !NETSTANDARD2_0
             if ( ConfigurationManager.AppSettings.AllKeys.Contains(propertyName))
-	        {
-	            propValue = ConfigurationManager.AppSettings[propertyName];
-	        }
+            {
+                propValue = ConfigurationManager.AppSettings[propertyName];
+            }  
+#endif
 
             var envValue = System.Environment.GetEnvironmentVariable(propertyName);
 		    if ( null != propValue && propValue.Trim().Length > 0 )

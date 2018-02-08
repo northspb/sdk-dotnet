@@ -132,12 +132,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Authorize.NET\AuthorizeNET.csproj">
-      <Project>{5D52EAEC-42FB-4313-83B8-69E2F55EBF14}</Project>
-      <Name>AuthorizeNET</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Api\ControllerTemplateTest.cst" />
     <None Include="App.config">
       <SubType>Designer</SubType>

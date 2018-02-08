@@ -134,9 +134,9 @@ namespace AuthorizeNet {
 				throw new InvalidDataException ("There was an error returned from AuthorizeNet: " + rawResponse[0] + "; this usually means your data sent along was incorrect. Please recheck that all dates and amounts are formatted correctly");
 			
 			return new GatewayResponse (rawResponse);
-		}
+        }
 		
-		
+		#if !NETSTANDARD2_0
 		class PolicyOverride : ICertificatePolicy
 		{
 
@@ -145,8 +145,9 @@ namespace AuthorizeNet {
 				return true;
 			}
 		}
+        #endif
 
 
 
-	}
+    }
 }

@@ -254,11 +254,14 @@ namespace AuthorizeNet {
         /// This method will pull the user's IP address for use with FDS. Only valid for Web-based transactions.
         /// </summary>
         /// <returns></returns>
-        public IGatewayRequest AddFraudCheck() {
-            if(HttpContext.Current != null)
+#if !NETSTANDARD2_0
+        public IGatewayRequest AddFraudCheck()
+        {
+            if (HttpContext.Current != null)
                 this.CustomerIp = HttpContext.Current.Request.UserHostAddress;
             return this;
-        }
+        } 
+#endif
 
 
         /// <summary>
